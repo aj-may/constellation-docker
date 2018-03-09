@@ -1,7 +1,10 @@
 FROM ubuntu:16.04
 
 RUN apt-get update && \
-    apt-get install -y curl xz-utils libdb-dev libleveldb-dev libsodium-dev zlib1g-dev libtinfo-dev
+    apt-get install -y curl xz-utils libdb-dev libleveldb-dev libsodium-dev zlib1g-dev libtinfo-dev netbase
+
+RUN mkdir /var/data
+WORKDIR /var/data
 
 ENV VERSION=0.3.2
 
